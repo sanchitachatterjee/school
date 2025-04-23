@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>School Details</h2><br> <br>
+    <form action="http://localhost:3002/addschools" method="post">
+       Name : <input type="text" name="name"> <br> <br>
+       Address : <input type="text" name="address"> <br> <br>
+       Latitude : <input type="text" name="latitude"> <br> <br>
+       Longitude : <input type="text" name="longitude"> <br> <br>
+       <input type="submit" value="Add School">
+    </form> <br> <br>
+    <h2>List of schools </h2> <br> <br>
+    <form action="http://localhost:3002/listschools" method="get">
+      User Latitude: <input type="text" name="ulatitude"> <br> <br>
+      User Longitude : <input type="text" name="ulongitude"> <br> <br>
+      <input type="submit" value="Show">
+    </form>
+</body>
+</html>
