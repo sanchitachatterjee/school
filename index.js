@@ -4,14 +4,17 @@ const dotenv = require('dotenv')
 const cors=require('cors')
 
 dotenv.config()
-const mysqldb = mysql.createConnection({
+const mysqldb = mysql.createPool({
   host: process.env.host,
   user: process.env.user,
   password: process.env.password,
-  database: 'school'
+  database: 'school',
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
-mysqldb.connect(() => console.log("Mysql is connected"));
+mysqldb.getConnection(() => console.log("Mysql is connected"));
 
 const app = express()
 app.use(cors());
