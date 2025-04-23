@@ -38,7 +38,7 @@ app.post('/addschools', async (req, res) => {
   mysqldb.query(sql, [name, address, latitude, longitude], (err, result) => {
     if (err)
       throw err;
-    res.send("<h2>Your data is inserted</h2> <a href='https://school-details.netlify.app/'>List Schools</a>")
+    res.send("<h2>Your data is inserted</h2> <a href='https://school-details.netlify.app/'>Back</a>")
   })
 
 })
