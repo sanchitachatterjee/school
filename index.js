@@ -15,7 +15,7 @@ mysqldb.connect(() => console.log("Mysql is connected"));
 const app = express()
 app.use(cors());
 app.use(cors({
-  origin: 'https://68093057bd93040a8577217b--schooldetailss.netlify.app'  // Your Netlify URL
+  origin: 'https://school-details.netlify.app/'  
 }));
 app.use(express.urlencoded({ extended: true }))
 app.post('/addschools', async (req, res) => {
@@ -34,7 +34,7 @@ app.post('/addschools', async (req, res) => {
   mysqldb.query(sql, [name, address, latitude, longitude], (err, result) => {
     if (err)
       throw err;
-    res.send("<h2>Your data is inserted</h2> <a href='http://127.0.0.1:5500/index.html'>List Schools</a>")
+    res.send("<h2>Your data is inserted</h2> <a href='https://school-details.netlify.app/'>List Schools</a>")
     res.status(201).json({ message: "School data is inserted" })
   })
 
