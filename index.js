@@ -1,6 +1,7 @@
 const mysql = require('mysql2');
 const express = require('express')
 const dotenv = require('dotenv')
+
 dotenv.config()
 const mysqldb = mysql.createConnection({
   host: process.env.host,
@@ -12,6 +13,10 @@ const mysqldb = mysql.createConnection({
 mysqldb.connect(() => console.log("Mysql is connected"));
 
 const app = express()
+app.use(cors());
+app.use(cors({
+  origin: 'https://68093057bd93040a8577217b--schooldetailss.netlify.app'  // Your Netlify URL
+}));
 app.use(express.urlencoded({ extended: true }))
 app.post('/addschools', async (req, res) => {
   const name = req.body.name
