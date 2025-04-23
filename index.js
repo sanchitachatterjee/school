@@ -1,6 +1,7 @@
 const mysql = require('mysql2');
 const express = require('express')
 const dotenv = require('dotenv')
+const cors=require(cors)
 
 dotenv.config()
 const mysqldb = mysql.createConnection({
