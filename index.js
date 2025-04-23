@@ -39,7 +39,6 @@ app.post('/addschools', async (req, res) => {
     if (err)
       throw err;
     res.send("<h2>Your data is inserted</h2> <a href='https://school-details.netlify.app/'>List Schools</a>")
-    res.status(201).json({ message: "School data is inserted" })
   })
 
 })
